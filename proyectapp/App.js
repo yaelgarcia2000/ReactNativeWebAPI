@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     backgroundColor: 'black',
     color: 'white',
+    paddingVertical: 20,
   },
 });
 export default App;
