@@ -34,6 +34,13 @@ const Autor = () => {
       nomPais: 'Colombia',
     },
   ]);
+  const [listapais, setListapais] = useState([
+    {idPais: 1, nomPais: 'España'},
+    {idPais: 2, nomPais: 'Argentina'},
+    {idPais: 3, nomPais: 'Colombia'},
+    {idPais: 4, nomPais: 'Peru'},
+    {idPais: 5, nomPais: 'Madrid'},
+  ]);
   const [filtroautor, serFiltroautor] = useState([]);
   const [nombrebusqueda, setNombrebusqueda] = useState('');
   const [visiblemodal, setVisiblemodal] = useState(false);
@@ -95,7 +102,7 @@ const Autor = () => {
 
         <FlatListView
           data={filtroautor}
-          propiedad="idAutor"
+          propiedadId="idAutor"
           propiedadColumn1="nomCom"
           propiedadColumn2="nomPais"
           anchos={[45, 25, 30]}
