@@ -5,7 +5,7 @@ import FlatListView from './FlatListView';
 import Input from './Input';
 import ModalInicio from './ModalInicio';
 import Titulo from './Titulo';
-
+import {Select} from 'native-base';
 const Autor = () => {
   const [listaautor, setListaautor] = useState([
     {
@@ -45,7 +45,7 @@ const Autor = () => {
   const [nombrebusqueda, setNombrebusqueda] = useState('');
   const [visiblemodal, setVisiblemodal] = useState(false);
   const [tituloeditaragregar, setTituloeditaragregar] = useState('');
-
+  const [iidpais, setIidpais] = useState('');
   useEffect(() => {
     serFiltroautor(listaautor);
   }, []);
@@ -85,6 +85,18 @@ const Autor = () => {
           text="Apellido Materno"
           placeholder="Ingrese el apellido Materno "
         />
+        <Select
+          selectedValue={iidpais}
+          onValueChange={value => setIidpais(value)}
+          placeholder="Seleccione su país">
+          {listapais.map(obj => (
+            <Select.Item
+              label={obj.nomPais}
+              value={obj.idPais}
+              key={obj.idPais}
+            />
+          ))}
+        </Select>
       </ModalInicio>
       <Titulo title={'Autor'} />
       <View style={{margin: 15}}>
